@@ -10,9 +10,7 @@ import {
 } from "lucide-react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
 
 const steps = [
   {
@@ -55,7 +53,7 @@ const steps = [
 
 export default function FlowWork() {
   return (
-    <section className="py-24 bg-slate-950 overflow-hidden">
+    <section id="workflow" className="py-24 bg-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
