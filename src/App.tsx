@@ -2,15 +2,13 @@ import { useState, useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import * as cocossd from "@tensorflow-models/coco-ssd";
 import {
-  Camera,
   FileDown,
   Play,
   Square,
   Upload,
-  FileText,
   Image as ImageIcon,
   RefreshCcw,
-} from "lucide-react";
+} from "lucide-react"; // Menghapus Camera dan FileText yang tidak terpakai
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
