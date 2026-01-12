@@ -7,24 +7,19 @@ export default function About() {
           {/* Sisi Kiri: Teks Deskripsi */}
           <div>
             <h2 className="text-3xl font-bold text-white mb-6">
-              Smart Count : Aplikasi Penghitung Barang Otomatis
+              <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                SmartCount
+              </span>{" "}
+              : Aplikasi Penghitung Barang Otomatis
             </h2>
             <p className="text-slate-400 mb-6 leading-relaxed">
-              SmartCount adalah sebuah aplikasi penghitung barang otomatis yang
-              dirancang untuk membantu proses perhitungan barang menjadi lebih
-              mudah, cepat, dan akurat. Dengan memanfaatkan teknologi Computer
-              Vision, SmartCount mampu mendeteksi dan menghitung objek secara
-              otomatis melalui kamera tanpa perlu campur tangan manual. Aplikasi
-              ini sangat cocok digunakan pada berbagai skenario seperti proses
-              produksi, pengemasan, gudang, maupun kebutuhan monitoring lainnya
-              yang memerlukan perhitungan barang secara real-time. Melalui
-              antarmuka website yang sederhana dan mudah digunakan, SmartCount
-              memungkinkan pengguna untuk memantau hasil perhitungan secara
-              langsung, melihat hasil data, serta mengontrol proses perhitungan
-              dengan praktis. Dengan hadirnya SmartCount, diharapkan proses
-              perhitungan barang dapat berjalan lebih efisien, meminimalkan
-              kesalahan manusia, dan menjadi contoh nyata penerapan Computer
-              Vision dalam sistem otomasi cerdas.
+              <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                SmartCount
+              </span>{" "}
+              adalah aplikasi penghitung barang otomatis berbasis Computer
+              Vision yang mendeteksi objek melalui kamera, menghitung secara
+              real-time, menampilkan data di website, meningkatkan efisiensi,
+              akurasi, dan mengurangi kesalahan manusia operasional modern.
             </p>
             <ul className="space-y-4">
               {[
@@ -44,14 +39,26 @@ export default function About() {
           </div>
 
           {/* Sisi Kanan: Kartu Statistik */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-slate-800 p-8 rounded-3xl border border-slate-700 md:mt-8 shadow-xl">
-              <h3 className="text-blue-400 text-4xl font-bold mb-2">99%</h3>
-              <p className="text-slate-400 text-sm italic font-medium">
-                Akurasi Deteksi
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
+              <h3 className="text-white text-4xl font-bold mb-2">99,9%</h3>
+              <p className="text-blue-100 text-sm italic font-medium">
+                Accuracy
               </p>
             </div>
-            <div className="bg-blue-600 p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
+              <h3 className="text-white text-4xl font-bold mb-2">0ms</h3>
+              <p className="text-blue-100 text-sm italic font-medium">
+                Latency Local
+              </p>
+            </div>
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
+              <h3 className="text-white text-4xl font-bold mb-2">0ms</h3>
+              <p className="text-blue-100 text-sm italic font-medium">
+                Latency Local
+              </p>
+            </div>
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
               <h3 className="text-white text-4xl font-bold mb-2">0ms</h3>
               <p className="text-blue-100 text-sm italic font-medium">
                 Latency Local

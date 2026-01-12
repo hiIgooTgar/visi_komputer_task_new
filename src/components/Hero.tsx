@@ -31,7 +31,7 @@ export default function Hero({ onStart }: { onStart: () => void }) {
         <div className="flex flex-wrap justify-center gap-4">
           <button
             onClick={onStart}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-blue-500/20"
+            className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-blue-500/20"
           >
             Mulai Deteksi Sekarang
           </button>

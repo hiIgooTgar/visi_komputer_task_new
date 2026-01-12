@@ -45,7 +45,10 @@ export default function FlowWork() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Alur Kerja <span className="text-blue-500">SmartCount</span>
+            Alur Kerja{" "}
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+              SmartCount
+            </span>
           </h2>
           <p className="text-slate-400">
             Solusi cerdas untuk menghitung barang secara otomatis dan real-time
@@ -59,9 +62,9 @@ export default function FlowWork() {
           pagination={{ clickable: true, dynamicBullets: true }}
           autoplay={{ delay: 4000 }}
           breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
+            640: { slidesPerView: 1 },
+            1024: { slidesPerView: 2 },
+            1280: { slidesPerView: 2 },
           }}
           className="workflow-swiper !pb-16"
         >

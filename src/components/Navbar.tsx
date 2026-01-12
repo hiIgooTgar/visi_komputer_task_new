@@ -54,10 +54,9 @@ export default function Navbar() {
           </div>
 
           <div className="h-6 w-[1px] bg-slate-800"></div>
-
           <button
             onClick={scrollToApp}
-            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all active:scale-95 shadow-lg shadow-blue-500/20"
+            className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all active:scale-95 shadow-lg shadow-blue-500/20"
           >
             MULAI
           </button>
@@ -88,7 +87,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={scrollToApp}
-              className="w-full bg-blue-600 text-white font-bold py-4 rounded-2xl mt-2"
+              className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold py-4 rounded-2xl mt-2"
             >
               MULAI
             </button>

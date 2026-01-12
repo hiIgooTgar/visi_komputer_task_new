@@ -43,7 +43,11 @@ export default function Faq() {
             Pertanyaan Umum
           </h2>
           <p className="text-slate-400">
-            Segala hal yang perlu Anda ketahui tentang SmartCount AI
+            Segala hal yang perlu Anda ketahui tentang{" "}
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+              SmartCount
+            </span>{" "}
+            AI
           </p>
         </div>
 
