@@ -6,28 +6,28 @@ export default function Faq() {
 
   const questions = [
     {
-      q: "Apakah aplikasi ini butuh internet?",
-      a: "Untuk deteksi dasar (Kamera Real-time), aplikasi bekerja secara offline menggunakan TensorFlow.js. Namun untuk fitur AI tingkat lanjut melalui Python Backend, koneksi ke server lokal/cloud diperlukan.",
+      q: "Apa itu SmartCount ?",
+      a: "SmartCount adalah aplikasi penghitung barang otomatis yang menggunakan kamera dan teknologi AI untuk mendeteksi dan menghitung barang secara real-time. Sistem ini memudahkan pengelolaan stok gudang tanpa perlu pencatatan manual.",
     },
     {
-      q: "Objek apa saja yang bisa dideteksi?",
-      a: "SmartCount mendukung deteksi 80+ kategori objek standar COCO seperti manusia, kendaraan, alat tulis, hingga kategori kustom seperti logistik dan peralatan rumah tangga.",
+      q: "Bagaimana cara kerja SmartCount ?",
+      a: "SmartCount bekerja dengan mengambil gambar atau video barang melalui kamera, kemudian menggunakan model YOLOv8 untuk mendeteksi barang. Setelah terdeteksi, sistem menghitung jumlah setiap barang dan menampilkan hasilnya langsung di dashboard pada bagian data hasil.",
     },
     {
-      q: "Format laporan apa yang didukung?",
-      a: "Anda dapat mengekspor data hasil hitung ke dalam format Microsoft Excel (.xlsx) dan dokumen PDF (.pdf) lengkap dengan stempel waktu.",
+      q: "Apakah SmartCount bisa menghitung semua jenis barang ?",
+      a: "SmartCount dapat menghitung barang yang sudah dikenali oleh model deteksi (YOLOv8). Untuk barang baru atau berbeda, model harus dilatih atau diperbarui agar bisa mendeteksi dengan akurat.",
     },
     {
-      q: "Bagaimana dengan privasi data?",
-      a: "Proses deteksi dilakukan secara lokal di browser Anda atau server privat Anda sendiri. Kami tidak menyimpan rekaman video di server publik manapun.",
+      q: "BaApakah SmartCount aman digunakan oleh banyak pengguna ?",
+      a: "Ya, SmartCount mendukung manajemen hak akses pengguna. Admin dapat mengatur siapa saja yang bisa melihat, menambahkan, atau mengubah data barang.",
     },
     {
-      q: "Bisa digunakan di perangkat apa saja?",
-      a: "SmartCount berbasis web, sehingga dapat diakses melalui laptop, tablet, maupun smartphone selama memiliki browser modern dan akses kamera.",
+      q: "Apakah SmartCount membutuhkan koneksi internet ?",
+      a: "SmartCount dapat berjalan secara lokal menggunakan kamera yang terhubung ke komputer atau server. Namun, jika ingin menyimpan data ke server cloud atau mengakses laporan dari jarak jauh, dibutuhkan koneksi internet.",
     },
     {
-      q: "Apakah akurasinya bisa ditingkatkan?",
-      a: "Ya, sistem kami mendukung integrasi model YOLO kustom (custom training) untuk mengenali objek spesifik yang hanya ada di industri atau bisnis Anda.",
+      q: "Bisakah saya menyimpan data jumlah barang?",
+      a: "Ya, SmartCount menyediakan fitur download data jumlah barang ke PDF, sehingga laporan jumlah barang bisa digunakan untuk audit atau dokumentasi.",
     },
   ];
 
@@ -74,7 +74,7 @@ export default function Faq() {
                   openIndex === i ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="p-6 pt-0 text-slate-400 text-sm border-t border-slate-800/50 mt-2">
+                <div className="p-6 pt-0 text-slate-400 text-sm border-t text-justify border-slate-800/50 mt-2">
                   {item.a}
                 </div>
               </div>

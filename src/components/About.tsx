@@ -1,26 +1,37 @@
 export default function About() {
   return (
     // Tambahkan return di sini
-    <section id="about" className="py-24 px-6 bg-slate-900/30">
+    <section id="tentang" className="py-24 px-6 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Sisi Kiri: Teks Deskripsi */}
           <div>
             <h2 className="text-3xl font-bold text-white mb-6">
-              Teknologi Edge AI Terkini
+              Smart Count : Aplikasi Penghitung Barang Otomatis
             </h2>
             <p className="text-slate-400 mb-6 leading-relaxed">
-              SmartCount menggunakan kombinasi **TensorFlow.js** untuk
-              pemrosesan lokal yang sangat cepat di sisi client, dan **Python
-              FastAPI + YOLOv8** untuk analisis mendalam yang membutuhkan
-              akurasi tingkat tinggi.
+              SmartCount adalah sebuah aplikasi penghitung barang otomatis yang
+              dirancang untuk membantu proses perhitungan barang menjadi lebih
+              mudah, cepat, dan akurat. Dengan memanfaatkan teknologi Computer
+              Vision, SmartCount mampu mendeteksi dan menghitung objek secara
+              otomatis melalui kamera tanpa perlu campur tangan manual. Aplikasi
+              ini sangat cocok digunakan pada berbagai skenario seperti proses
+              produksi, pengemasan, gudang, maupun kebutuhan monitoring lainnya
+              yang memerlukan perhitungan barang secara real-time. Melalui
+              antarmuka website yang sederhana dan mudah digunakan, SmartCount
+              memungkinkan pengguna untuk memantau hasil perhitungan secara
+              langsung, melihat hasil data, serta mengontrol proses perhitungan
+              dengan praktis. Dengan hadirnya SmartCount, diharapkan proses
+              perhitungan barang dapat berjalan lebih efisien, meminimalkan
+              kesalahan manusia, dan menjadi contoh nyata penerapan Computer
+              Vision dalam sistem otomasi cerdas.
             </p>
             <ul className="space-y-4">
               {[
-                "Pemrosesan Video 60 FPS secara lokal.",
-                "Dukungan ekspor laporan PDF & Excel otomatis.",
-                "Deteksi multi-objek secara bersamaan.",
-                "Keamanan data (proses dilakukan di perangkat Anda).",
+                "Penghitungan Barang Otomatis & Akurat.",
+                "Pemantauan Stok Real-Time.",
+                "Efisiensi Waktu dan Tenaga.",
+                "Laporan Data Otomatis dan Mudah Diakses.",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-slate-300">
                   <div className="h-5 w-5 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0">

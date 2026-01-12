@@ -15,53 +15,40 @@ import "swiper/swiper-bundle.css";
 const steps = [
   {
     icon: <Camera size={32} />,
-    title: "Input Sumber",
-    desc: "Hubungkan kamera langsung (Webcam/IP Cam) atau unggah file foto dan video ke dalam dashboard.",
+    title: "Input Objek",
+    desc: "Pada tahap Input Objek, sistem mengambil gambar atau video barang secara real-time menggunakan kamera yang terhubung ke website. Setiap frame yang diambil diproses dengan OpenCV untuk meningkatkan kualitas citra, termasuk konversi ke grayscale, penghapusan noise, dan penekanan area yang relevan agar objek barang dapat dikenali dengan lebih akurat. Proses ini memastikan bahwa setiap citra siap untuk dianalisis oleh sistem deteksi barang.",
     color: "from-blue-500 to-cyan-400",
   },
   {
     icon: <Layers size={32} />,
-    title: "Preprocessing",
-    desc: "Sistem melakukan normalisasi frame dan penyesuaian kontras untuk akurasi deteksi maksimal.",
+    title: "Pengambilan Citra",
+    desc: "Setelah citra dipersiapkan, model YOLOv8 berbasis PyTorch digunakan untuk mendeteksi barang secara otomatis dalam setiap frame. Sistem memberikan bounding box dan label nama barang beserta tingkat kepercayaan (confidence) untuk setiap objek yang terdeteksi, sehingga pengguna dapat melihat hasil deteksi secara langsung pada layar. Proses ini memungkinkan identifikasi jenis barang secara cepat dan akurat, serta meminimalkan kesalahan manusia dalam pencatatan.",
     color: "from-purple-500 to-blue-500",
   },
   {
     icon: <Cpu size={32} />,
-    title: "AI Analysis",
-    desc: "YOLOv8 & TensorFlow.js memproses setiap frame untuk mengidentifikasi kategori dan koordinat objek.",
+    title: "Penghitungan Barang",
+    desc: "Pada tahap Penghitungan Barang, setiap objek yang terdeteksi dihitung secara otomatis dan jumlahnya diperbarui ke database atau file CSV. Dengan mekanisme ini, stok barang selalu diperbarui secara real-time tanpa perlu input manual, sehingga pengguna dapat memantau jumlah barang dengan mudah dan memastikan data inventaris tetap akurat. Sistem juga mempersiapkan data ini untuk laporan atau analisis lebih lanjut.",
     color: "from-cyan-400 to-emerald-400",
   },
   {
     icon: <ShieldCheck size={32} />,
-    title: "Validasi Logika",
-    desc: "Objek divalidasi berdasarkan confidence threshold agar tidak terjadi perhitungan ganda.",
+    title: "Laporan Data Hasil",
+    desc: "Tahap terakhir adalah Output Laporan Data Hasil, di mana website menampilkan ringkasan stok barang, termasuk total jumlah barang, barang yang menipis, dan barang yang habis. Pengguna dapat mengekspor data ini ke format Excel, CSV, atau PDF untuk laporan harian atau audit. Selain itu, sistem menampilkan notifikasi jika stok barang menipis atau habis, sehingga pengguna dapat mengambil tindakan cepat untuk menjaga ketersediaan inventaris.",
     color: "from-orange-400 to-red-500",
-  },
-  {
-    icon: <Database size={32} />,
-    title: "Penyimpanan Log",
-    desc: "Setiap deteksi dicatat ke dalam memori lokal beserta stempel waktu dan ID unik.",
-    color: "from-pink-500 to-purple-500",
-  },
-  {
-    icon: <FileSpreadsheet size={32} />,
-    title: "Ekspor Laporan",
-    desc: "Data diolah menjadi laporan siap saji dalam format Excel atau PDF untuk kebutuhan audit.",
-    color: "from-emerald-400 to-teal-500",
   },
 ];
 
 export default function FlowWork() {
   return (
-    <section id="workflow" className="py-24 bg-slate-950 overflow-hidden">
+    <section id="alur" className="py-24 bg-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Alur Kerja <span className="text-blue-500">SmartCount</span>
           </h2>
           <p className="text-slate-400">
-            Bagaimana teknologi AI kami memproses data Anda dari awal hingga
-            akhir.
+            Solusi cerdas untuk menghitung barang secara otomatis dan real-time
           </p>
         </div>
 
@@ -96,7 +83,7 @@ export default function FlowWork() {
                 <h3 className="text-xl font-bold text-white mb-4">
                   {step.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
+                <p className="text-slate-400 text-sm leading-relaxed text-justify">
                   {step.desc}
                 </p>
 
