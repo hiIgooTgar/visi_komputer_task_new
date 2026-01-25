@@ -1,13 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import {
-  Camera,
-  Cpu,
-  Database,
-  FileSpreadsheet,
-  Layers,
-  ShieldCheck,
-} from "lucide-react";
+import { Camera, Cpu, Layers, ShieldCheck } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/swiper-bundle.css";

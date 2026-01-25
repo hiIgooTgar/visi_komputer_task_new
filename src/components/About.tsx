@@ -41,27 +41,27 @@ export default function About() {
           {/* Sisi Kanan: Kartu Statistik */}
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
-              <h3 className="text-white text-4xl font-bold mb-2">99,9%</h3>
-              <p className="text-blue-100 text-sm italic font-medium">
-                Accuracy
+              <h3 className="text-black text-4xl font-bold mb-2">25ms</h3>
+              <p className="text-black text-sm italic font-medium">
+                Ping Latency
               </p>
             </div>
             <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
-              <h3 className="text-white text-4xl font-bold mb-2">0ms</h3>
-              <p className="text-blue-100 text-sm italic font-medium">
-                Latency Local
+              <h3 className="text-black text-4xl font-bold mb-2">30 FPS</h3>
+              <p className="text-black text-sm italic font-medium">
+                Frame Rate
+              </p>
+            </div>{" "}
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
+              <h3 className="text-black text-4xl font-bold mb-2">94%</h3>
+              <p className="text-black text-sm italic font-medium">
+                Avg. Confidence
               </p>
             </div>
             <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
-              <h3 className="text-white text-4xl font-bold mb-2">0ms</h3>
-              <p className="text-blue-100 text-sm italic font-medium">
-                Latency Local
-              </p>
-            </div>
-            <div className="bg-gradient-to-r from-blue-500 to-cyan-400  p-8 rounded-3xl shadow-xl shadow-blue-500/20 transform hover:-translate-y-2 transition-transform duration-300">
-              <h3 className="text-white text-4xl font-bold mb-2">0ms</h3>
-              <p className="text-blue-100 text-sm italic font-medium">
-                Latency Local
+              <h3 className="text-black text-4xl font-bold mb-2">12ms</h3>
+              <p className="text-black text-sm italic font-medium">
+                Inference Time
               </p>
             </div>
           </div>

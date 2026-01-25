@@ -5,10 +5,10 @@ import cv2
 import numpy as np
 from datetime import datetime
 import uvicorn
+import uuid
 
 app = FastAPI()
 
-# Koneksi ke Frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,13 +16,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load Model YOLOv8 (Otomatis download jika belum ada)
+# Load model YOLOv8 Nano
 model = YOLO('yolov8n.pt')
 
 CATEGORY_MAP = {
     'person': 'Manusia',
-    'backpack': 'Alat Belajar', 'book': 'Alat Belajar', 'laptop': 'Alat Belajar',
-    'bottle': 'Konsumsi', 'cup': 'Konsumsi', 'cell phone': 'Elektronik'
+    'laptop': 'Alat Elektronik', 'phone': 'Alat Elektronik', 'mouse': 'Alat Elektronik', 
+    'computer': 'Alat Elektronik', 'book': 'Alat Belajar', 'backpack': 'Perlengkapan', 
+    'bottle': 'Konsumsi', 'cup': 'Konsumsi', 'chair': 'Fasilitas', 'table': 'Meja'
 }
 
 @app.post("/detect")
@@ -33,30 +34,28 @@ async def detect_api(file: UploadFile = File(...)):
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         
         if img is None:
-            raise HTTPException(status_code=400, detail="File bukan gambar valid")
+            raise HTTPException(status_code=400, detail="File bukan gambar")
 
-        results = model.predict(img, conf=0.25)
+        results = model.predict(img, conf=0.3)
         detections = []
         boxes_coords = []
         
         for r in results:
             for box in r.boxes:
-                # Ambil koordinat [x1, y1, x2, y2]
                 b = box.xyxy[0].tolist() 
                 label = model.names[int(box.cls[0])]
-                conf = float(box.conf[0])
                 
                 detections.append({
-                    "id": f"ID-{np.random.randint(100, 999)}",
+                    "id": f"IMG-{uuid.uuid4().hex[:4].upper()}",
                     "waktu": datetime.now().strftime("%H:%M:%S"),
                     "namaObjek": label.upper(),
                     "jumlah": 1,
-                    "keterangan": CATEGORY_MAP.get(label, "Lainnya")
+                    "keterangan": CATEGORY_MAP.get(label, "Benda Umum")
                 })
                 
                 boxes_coords.append({
                     "box": b,
-                    "label": f"{label} {conf:.2f}"
+                    "label": label.upper()
                 })
 
         return {"status": "success", "data": detections, "boxes": boxes_coords}
