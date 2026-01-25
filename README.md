@@ -68,8 +68,17 @@ python main.py
 ### 2. Persiapan Frontend
 Buka terminal baru dan masuk ke folder utama project (atau folder frontend):
 ```bash
-# Instalasi dependencies
+# Instalasi dependencies dasar
 npm install
+
+# Pastikan library pendukung terpasang
+npm install swiper lucide-react xlsx @tensorflow/tfjs @tensorflow-models/coco-ssd
+python -m pip install fastapi uvicorn ultralytics python-multipart opencv-python-headless
+npm install swiper
+
+# Jika mengalami kesalahan gunakan perintah ini:
+python -m uvicorn main:app --reload
+
 ```
 
 Jalankan aplikasi frontend:
