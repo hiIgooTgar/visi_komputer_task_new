@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# 🚀 SmartCount AI: Real-time Object Detection & Counting
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**SmartCount AI** adalah aplikasi cerdas berbasis *Computer Vision* yang dirancang untuk mendeteksi, mengklasifikasikan, dan menghitung objek secara otomatis dalam waktu nyata. Dengan memanfaatkan kekuatan algoritma **YOLOv8 (You Only Look Once)**, aplikasi ini mampu mengenali 80 jenis objek berbeda dengan tingkat akurasi tinggi.
 
-Currently, two official plugins are available:
+Aplikasi ini sangat berguna untuk keperluan monitoring inventaris, analisis kepadatan pengunjung, hingga alat bantu identifikasi objek sehari-hari.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌟 Apa itu SmartCount?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SmartCount adalah solusi pemindaian visual yang menjembatani teknologi AI dengan kebutuhan praktis. Berbeda dengan metode pemindaian manual, SmartCount bekerja secara otomatis menggunakan kamera atau file gambar.
 
-## Expanding the ESLint configuration
+**Mengapa menggunakan Dataset COCO?**
+Aplikasi ini menggunakan dataset **COCO (Common Objects in Context)**, sebuah standar global dalam riset AI. Hal ini memungkinkan SmartCount untuk langsung mengenali benda-benda populer seperti:
+* **Orang & Kendaraan**: Person, Car, Motorcycle, Bicycle, Bus, Truck.
+* **Elektronik**: Laptop, Smartphone, Remote, Keyboard, Mouse.
+* **Peralatan Rumah Tangga**: Bottle, Chair, Dining table, Cup, Spoon, Knife.
+* **Lain-lain**: Backpack, Umbrella, Handbag, Tie, Suitcase.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Fitur Unggulan
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **Dual-Mode Detection**: Dukungan penuh untuk *Live Streaming* kamera dan *Photo Upload*.
+* **High-Speed Processing**: Didukung oleh YOLOv8 untuk proses deteksi yang cepat dan efisien.
+* **Discovery Log**: Mencatat setiap objek yang ditemukan lengkap dengan stempel waktu (timestamp).
+* **Export to Excel**: Fitur pelaporan instan untuk mengunduh riwayat deteksi ke format `.xlsx`.
+* **Interactive UI**: Antarmuka modern dengan Dark Mode yang responsif dan intuitif.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📦 Persyaratan Sistem (Library)
+
+Sebelum menjalankan aplikasi, pastikan komputer Anda sudah terinstal **Python 3.9+** dan **Node.js**.
+
+### Library Backend (Python)
+* **Ultralytics**: Mesin utama untuk menjalankan model YOLOv8.
+* **FastAPI**: Framework web berperforma tinggi untuk API.
+* **Uvicorn**: Server ASGI untuk menjalankan FastAPI.
+* **Python-Multipart**: Untuk menangani pengiriman file gambar.
+
+### Library Frontend (React)
+* **Lucide-React**: Untuk set ikon yang elegan.
+* **XLSX**: Untuk menghasilkan file laporan Excel.
+* **Tailwind CSS**: Untuk desain antarmuka.
+
+---
+
+## 🚀 Langkah-Langkah Instalasi & Menjalankan Aplikasi
+
+Ikuti panduan berikut untuk menjalankan SmartCount di perangkat lokal Anda:
+
+### 1. Persiapan Backend
+Buka terminal dan masuk ke folder backend:
+```bash
+cd smart-count/src/backend
+
+# Instalasi library
+pip install ultralytics fastapi uvicorn python-multipart
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Jalankan server backend: folder smart-count/src/backend
+```bash
+python main.py
+```
+(Catatan: Saat pertama kali dijalankan, sistem akan otomatis mengunduh model yolov8n.pt dari server Ultralytics).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Persiapan Frontend
+Buka terminal baru dan masuk ke folder utama project (atau folder frontend):
+```bash
+# Instalasi dependencies
+npm install
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Jalankan aplikasi frontend:
+```bash
+npm run dev
 ```
