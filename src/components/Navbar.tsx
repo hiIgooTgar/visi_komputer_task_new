@@ -8,12 +8,14 @@ export default function Navbar() {
     { name: "Beranda", href: "#beranda" },
     { name: "Tentang Aplikasi", href: "#tentang" }, // Tambahkan ID workflow di section workflow Anda
     { name: "Alur Program", href: "#alur" },
-    { name: "Data Hasil", href: "#app" },
+    { name: "Data Hasil", href: "#tracker-section" },
     { name: "FAQ", href: "#faq" },
   ];
 
   const scrollToApp = () => {
-    document.getElementById("app")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("tracker-section")
+      ?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
