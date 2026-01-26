@@ -6,7 +6,7 @@ export default function Navbar() {
 
   const menuItems = [
     { name: "Beranda", href: "#beranda" },
-    { name: "Tentang Aplikasi", href: "#tentang" }, // Tambahkan ID workflow di section workflow Anda
+    { name: "Tentang Aplikasi", href: "#tentang" },
     { name: "Alur Program", href: "#alur" },
     { name: "Data Hasil", href: "#tracker-section" },
     { name: "FAQ", href: "#faq" },
