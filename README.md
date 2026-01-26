@@ -1,7 +1,8 @@
 # 🚀 SmartCount AI: Real-time Object Detection & Counting
 
-**SmartCount AI** adalah aplikasi cerdas berbasis *Computer Vision* yang dirancang untuk mendeteksi, mengklasifikasikan, dan menghitung objek secara otomatis dalam waktu nyata. Dengan memanfaatkan kekuatan algoritma **YOLOv8 (You Only Look Once)**, aplikasi ini mampu mengenali 80 jenis objek berbeda dengan tingkat akurasi tinggi.
-
+<p style="text-align: justify;">
+<b>SmartCount</b> AI adalah aplikasi cerdas berbasis <b>Computer Vision</b> yang dirancang untuk mendeteksi, mengklasifikasikan, dan menghitung objek secara otomatis dalam waktu nyata. Dengan memanfaatkan kekuatan algoritma <b>YOLOv8 (You Only Look Once)</b>, aplikasi ini mampu mengenali 80 jenis objek berbeda dengan tingkat akurasi tinggi.
+</p>
 Aplikasi ini sangat berguna untuk keperluan monitoring inventaris, analisis kepadatan pengunjung, hingga alat bantu identifikasi objek sehari-hari.
 
 ---
@@ -31,7 +32,7 @@ Aplikasi ini menggunakan dataset **COCO (Common Objects in Context)**, sebuah st
 
 ## 📦 Persyaratan Sistem (Library)
 
-Sebelum menjalankan aplikasi, pastikan komputer Anda sudah terinstal **Python 3.9+** dan **Node.js**.
+Sebelum menjalankan aplikasi, pastikan komputer Anda sudah terinstal **Python 3.13+** dan **Node.js**.
 
 ### Library Backend (Python)
 * **Ultralytics**: Mesin utama untuk menjalankan model YOLOv8.
